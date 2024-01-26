@@ -5,9 +5,9 @@ module.exports = (sequelize, DataTypes) => {
     class groupLecturer extends Model {
         static associate(models) {
             // define association here
-            this.hasMany(models.lecturer, {
-                through: 'group_lecturer_member',
-            })
+            // this.hasMany(models.lecturer, {
+            //     through: 'group_lecturer_member',
+            // })
         }
     }
     groupLecturer.init(

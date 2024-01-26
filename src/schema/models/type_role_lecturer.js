@@ -4,9 +4,9 @@ const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
     class typeRoleLecturer extends Model {
         static associate(models) {
-            this.hasMany(models.lecturer, {
-                through: 'lecturer_type_role',
-            })
+            // this.hasMany(models.lecturer, {
+            //     through: 'lecturer_type_role',
+            // })
         }
     }
     typeRoleLecturer.init(

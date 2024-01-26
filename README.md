@@ -1,6 +1,7 @@
 # Manage graduation thesis iuh
 
-# Creator: 
+# Creator:
+
 Name: Le Minh Quang
 
 Name: Nguyen Huy Hoang

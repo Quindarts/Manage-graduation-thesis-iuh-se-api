@@ -39,6 +39,15 @@ module.exports = {
             },
         }),
             await queryInterface.addConstraint('lecturers', {
+                fields: ['groupLecturer_id'],
+                type: 'foreign key',
+                name: 'lecturer_groupLecturers_association',
+                references: {
+                    table: 'groupLecturers',
+                    field: 'id',
+                },
+            }),
+            await queryInterface.addConstraint('lecturers', {
                 fields: ['typeRoleLecturer_id'],
                 type: 'foreign key',
                 name: 'lecturer_typeRoleLecturer_association',
@@ -50,7 +59,7 @@ module.exports = {
             await queryInterface.addConstraint('lecturers', {
                 fields: ['user_id'],
                 type: 'foreign key',
-                name: 'lecturer_achievement_association',
+                name: 'lecturer_user_association',
                 references: {
                     table: 'users',
                     field: 'id',

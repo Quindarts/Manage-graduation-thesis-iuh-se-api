@@ -14,12 +14,15 @@ module.exports = {
                 require: true,
                 // references: { model: 'typeRoleLecturers', key: 'id' },
             },
-
             groupLecturer_id: {
                 type: Sequelize.INTEGER,
-                // references: { model: 'groupLecturers', key: 'id' },
+                require: true,
             },
-
+            user_id: {
+                type: Sequelize.INTEGER,
+                require: true,
+                // references: { model: 'users', key: 'id' },
+            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,

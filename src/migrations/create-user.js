@@ -37,7 +37,7 @@ module.exports = {
             major_id: {
                 type: Sequelize.INTEGER,
                 require: true,
-                references: { model: 'majors', key: 'id' },
+                // references: { model: 'majors', key: 'id' },
             },
             createdAt: {
                 allowNull: false,

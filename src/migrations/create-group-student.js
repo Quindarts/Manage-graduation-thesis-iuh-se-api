@@ -21,6 +21,10 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 // references: { model: 'terms', key: 'id' },
             },
+            lecture_id: {
+                type: Sequelize.INTEGER,
+                // references: { model: 'lecturers', key: 'id' },
+            },
             topic_id: {
                 type: Sequelize.INTEGER,
                 // references: { model: 'topics', key: 'id' },

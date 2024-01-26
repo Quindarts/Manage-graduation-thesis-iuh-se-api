@@ -43,10 +43,6 @@ module.exports = {
                 type: Sequelize.ENUM,
                 values: ['REFUSE', 'ACCEPT', 'PENDING'],
             },
-            lecturer_id: {
-                type: Sequelize.INTEGER,
-                references: { model: 'lecturers', key: 'id' },
-            },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,

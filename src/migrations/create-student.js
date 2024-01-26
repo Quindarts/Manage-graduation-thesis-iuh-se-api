@@ -14,10 +14,14 @@ module.exports = {
                 values: ['COLLEGE', 'UNIVERSITY'],
                 defaultValue: 'UNIVERSITY',
             },
-
+            user_id: {
+                type: Sequelize.INTEGER,
+                require: true,
+                // references: { model: 'users', key: 'id' },
+            },
             groupStudent_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'groupStudents', key: 'id' },
+                // references: { model: 'groupStudents', key: 'id' },
                 allowNull: true,
             },
 

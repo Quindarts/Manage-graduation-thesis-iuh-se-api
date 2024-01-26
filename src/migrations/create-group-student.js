@@ -19,15 +19,19 @@ module.exports = {
             },
             term_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'terms', key: 'id' },
+                // references: { model: 'terms', key: 'id' },
+            },
+            lecture_id: {
+                type: Sequelize.INTEGER,
+                // references: { model: 'lecturers', key: 'id' },
             },
             topic_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'topics', key: 'id' },
+                // references: { model: 'topics', key: 'id' },
             },
             achievement_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'achievements', key: 'id' },
+                // references: { model: 'achievements', key: 'id' },
             },
             createdAt: {
                 allowNull: false,

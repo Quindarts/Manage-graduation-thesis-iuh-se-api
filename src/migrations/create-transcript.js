@@ -15,11 +15,11 @@ module.exports = {
             },
             groupStudent_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'groupStudents', key: 'id' },
+                // references: { model: 'groupStudents', key: 'id' },
             },
             groupLecturer_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'groupgroupLecturers', key: 'id' },
+                // references: { model: 'groupLecturers', key: 'id' },
             },
             createdAt: {
                 allowNull: false,

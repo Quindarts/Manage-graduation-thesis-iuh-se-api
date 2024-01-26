@@ -2,6 +2,7 @@ const express = require('express')
 const { APP_ROUTER } = require('../constants/Router')
 
 const { createUser, getAllUser } = require('../controller/User/user.controller')
+const { createMajor } = require('../controller/Major/major.controller')
 
 const router = express.Router()
 

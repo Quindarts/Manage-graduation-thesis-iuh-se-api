@@ -5,6 +5,7 @@ module.exports = (sequelize, DataTypes) => {
     class term extends Model {
         static associate(models) {
             // define association here
+            this.belongsToMany(models.groupStudents)
         }
     }
     term.init(

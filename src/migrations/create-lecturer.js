@@ -12,12 +12,12 @@ module.exports = {
             typeRoleLecturer_id: {
                 type: Sequelize.INTEGER,
                 require: true,
-                references: { model: 'typeRoleLecturers', key: 'id' },
+                // references: { model: 'typeRoleLecturers', key: 'id' },
             },
 
             groupLecturer_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'groupLecturers', key: 'id' },
+                // references: { model: 'groupLecturers', key: 'id' },
             },
 
             createdAt: {

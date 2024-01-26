@@ -19,7 +19,7 @@ module.exports = {
             },
             groupLecturer_id: {
                 type: Sequelize.INTEGER,
-                references: { model: 'groupgroupLecturers', key: 'id' },
+                references: { model: 'groupLecturers', key: 'id' },
             },
             createdAt: {
                 allowNull: false,

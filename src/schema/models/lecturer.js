@@ -8,11 +8,6 @@ module.exports = (sequelize, DataTypes) => {
                 foreignKey: 'id',
                 as: 'user',
             })
-
-            // this.hasMany(models.groupLecturer, {
-            //     through: 'group_lecturer_member',
-            // })
-
             this.hasMany(models.typeRoleLecturer, {
                 through: 'lecturer_type_role',
             })

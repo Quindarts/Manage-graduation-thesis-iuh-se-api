@@ -109,6 +109,42 @@ module.exports = {
                     table: 'majors',
                     field: 'id',
                 },
+            }),
+            await queryInterface.addConstraint('topicOfTerms', {
+                fields: ['term_id'],
+                type: 'foreign key',
+                name: 'term_topicOfTerm_association',
+                references: {
+                    table: 'terms',
+                    field: 'id',
+                },
+            }),
+            await queryInterface.addConstraint('topicOfTerms', {
+                fields: ['topic_id'],
+                type: 'foreign key',
+                name: 'topic_topicOfTerm_association',
+                references: {
+                    table: 'topics',
+                    field: 'id',
+                },
+            }),
+            await queryInterface.addConstraint('lecturerOfGroups', {
+                fields: ['lecturer_id'],
+                type: 'foreign key',
+                name: 'lecturer_lecturerOfGroup_association',
+                references: {
+                    table: 'lecturers',
+                    field: 'id',
+                },
+            }),
+            await queryInterface.addConstraint('lecturerOfGroups', {
+                fields: ['groupLecturer_id'],
+                type: 'foreign key',
+                name: 'grouplecturer_lecturerOfGroup_association',
+                references: {
+                    table: 'groupLecturers',
+                    field: 'id',
+                },
             })
     },
     async down(queryInterface, Sequelize) {

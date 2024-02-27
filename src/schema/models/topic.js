@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             groupQuantity: DataTypes.INTEGER,
             maxGroupQuantity: DataTypes.INTEGER,
             note: DataTypes.STRING,
-            targer: DataTypes.STRING,
+            target: DataTypes.STRING,
             standardOutput: DataTypes.STRING,
             requireInput: DataTypes.STRING,
             status: DataTypes.STRING,

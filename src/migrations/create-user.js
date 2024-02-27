@@ -14,6 +14,10 @@ module.exports = {
                 require: true,
                 unique: true,
             },
+            role_id : {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+            },
             password: {
                 type: Sequelize.STRING,
                 require: true,

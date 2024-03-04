@@ -5,8 +5,7 @@ const app = express()
 const cors = require('cors')
 const route = require('./router')
 const { connectDB } = require('./config/connectDB')
-
-const cloudinary = require('cloudinary').v2
+const { encryptedPassword } = require('./helper/crypto/cryptos')
 
 const corsOptions = {
     origin: '*',

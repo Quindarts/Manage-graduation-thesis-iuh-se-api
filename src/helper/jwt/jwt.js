@@ -26,13 +26,9 @@ function verifyToken(type = 'access', token) {
 function signatureToken(token) {
     return token.split('.')[2]
 }
-function randomTokenString() {
-    return Crypto.randomBytes(40).toString('hex')
-}
 
 module.exports = {
     verifyToken,
     generateToken,
-    randomTokenString,
     signatureToken,
 }

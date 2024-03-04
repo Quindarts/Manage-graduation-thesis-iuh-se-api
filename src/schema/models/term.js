@@ -5,7 +5,14 @@ module.exports = (sequelize, DataTypes) => {
     class term extends Model {
         static associate(models) {
             // define association here
-            this.belongsToMany(models.groupStudents)
+            this.hasMany(models.groupStudent, {
+                foreignKey: 'term_id',
+                as: 'term',
+            })
+            this.hasMany(models.topicOfTerm, {
+                foreignKey: 'term_id',
+                as: 'term_topicOfTerm',
+            })
         }
     }
     term.init(

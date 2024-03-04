@@ -17,6 +17,7 @@ module.exports = {
             user_id: {
                 type: Sequelize.INTEGER,
                 require: true,
+                unique: true,
                 // references: { model: 'users', key: 'id' },
             },
             groupStudent_id: {

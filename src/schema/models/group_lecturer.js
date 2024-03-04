@@ -5,8 +5,13 @@ module.exports = (sequelize, DataTypes) => {
     class groupLecturer extends Model {
         static associate(models) {
             // define association here
-            this.belongsToMany(models.lecturer, {
-                through: 'group_lecturer_member',
+            this.hasMany(models.lecturer, {
+                foreignKey: 'groupLecturer_id',
+                as: 'lecturer',
+            })
+            this.hasMany(models.lecturer, {
+                foreignKey: 'groupLecturer_id',
+                as: 'transcript',
             })
         }
     }

@@ -1,15 +1,18 @@
 'use strict'
 const { Model } = require('sequelize')
+const user = require('./user')
 
 module.exports = (sequelize, DataTypes) => {
     class student extends Model {
         static associate(models) {
-            this.hasOne(models.user, {
-                foreignKey: 'id',
+
+            this.belongsTo(models.user, {
+                foreignKey: 'user_id',
                 as: 'user',
             })
+
             this.hasOne(models.groupStudent, {
-                foreignKey: 'id',
+                foreignKey: 'groupStudent_id',
                 as: 'groupStudent',
             })
         }
@@ -18,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             typeTranning: DataTypes.STRING,
             groupStudent_id: DataTypes.INTEGER,
+            user_id: DataTypes.INTEGER,
         },
         {
             sequelize,

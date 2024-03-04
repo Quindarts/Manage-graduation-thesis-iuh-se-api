@@ -1,14 +1,16 @@
 'use strict'
 const { Model } = require('sequelize')
+
 module.exports = (sequelize, DataTypes) => {
     class lecturerOfGroup extends Model {
         static associate(models) {
-            this.hasOne(models.lecturer, {
-                foreignKey: 'id',
+
+            this.belongsTo(models.lecturer, {
+                foreignKey: 'lecturer_id',
                 as: 'lecturer_lecturerOfGroup',
             })
-            this.hasOne(models.groupLecturer, {
-                foreignKey: 'id',
+            this.belongsTo(models.groupLecturer, {
+                foreignKey: 'groupLecturer_id',
                 as: 'groupLecturer_lecturerOfGroup',
             })
         }

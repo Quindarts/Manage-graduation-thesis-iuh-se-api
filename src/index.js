@@ -22,20 +22,6 @@ connectDB()
 route(app)
 
 const port = process.env.PORT || 3000
-
-// cloudinary.config({
-//     cloud_name: process.env.CLOUDINARY_NAME,
-//     api_key: process.env.CLOUDINARY_API_KEY,
-//     api_secret: process.env.CLOUDINARY_API_SECRET,
-// })
-
-// async function uploadDemo() {
-//     const up = await cloudinary.uploader.upload(`./test/image.jpg`)
-//     return up
-// }
-
-// uploadDemo().then((result) => console.log(result))
-
 app.listen(port, () =>
     console.log('🚀> Server is up and running on port : ' + port)
 )

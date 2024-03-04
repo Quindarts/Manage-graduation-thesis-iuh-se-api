@@ -3,13 +3,17 @@ const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
     class topicOfTerm extends Model {
         static associate(models) {
-            this.hasOne(models.term, {
-                foreignKey: 'id',
+            this.belongsTo(models.term, {
+                foreignKey: 'term_id',
                 as: 'term_topicOfTerm',
             })
             this.hasOne(models.topic, {
-                foreignKey: 'id',
+                foreignKey: 'topic_id',
                 as: 'topic_topicOfTerm',
+            })
+            this.hasOne(models.lecturer, {
+                foreignKey: 'lecturer_id',
+                as: 'lecturer_topicOfTerm',
             })
         }
     }
@@ -17,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         {
             term_id: DataTypes.INTEGER,
             topic_id: DataTypes.INTEGER,
+            lecturer_id: DataTypes.INTEGER,
         },
         {
             sequelize,

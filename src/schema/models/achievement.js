@@ -2,10 +2,12 @@
 const { Model } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-    
     class achievement extends Model {
         static associate(models) {
-            // define association here
+            this.hasOne(models.groupStudent, {
+                foreignKey: 'achievement_id',
+                as: 'achievement',
+            })
         }
     }
 

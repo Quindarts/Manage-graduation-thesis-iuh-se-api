@@ -14,6 +14,7 @@ module.exports = {
                 require: true,
                 unique: true,
             },
+
             password: {
                 type: Sequelize.STRING,
                 require: true,
@@ -38,6 +39,10 @@ module.exports = {
                 type: Sequelize.INTEGER,
                 require: true,
                 // references: { model: 'majors', key: 'id' },
+            },
+            role_id: {
+                type: Sequelize.INTEGER,
+                require: true,
             },
             createdAt: {
                 allowNull: false,

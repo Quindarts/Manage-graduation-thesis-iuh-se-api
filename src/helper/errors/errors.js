@@ -1,3 +1,5 @@
+const { HTTP_STATUS } = require('../../constants/contanst')
+
 exports.sendError = (res, error) => {
     res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
         success: false,
@@ -15,7 +17,7 @@ exports.sendWarning = (res, msg) => {
 }
 
 exports.sendUnauthenticated = (res) => {
-    res.status(HTTP_STATUS.UNAUTHENTICATED).json({
+    res.status(HTTP_STATUS.UNAUTHORIZED).json({
         success: false,
         status: 401,
         msg: 'Unauthenticated',

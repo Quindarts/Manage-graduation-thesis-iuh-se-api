@@ -4,20 +4,20 @@ const { Model } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
     class groupStudent extends Model {
         static associate(models) {
-            this.hasOne(models.lecturer, {
-                foreignKey: 'id',
+            this.belongsTo(models.lecturer, {
+                foreignKey: 'lecture_id',
                 as: 'lecturer',
             })
-            this.hasOne(models.topic, {
-                foreignKey: 'id',
+            this.belongsTo(models.topic, {
+                foreignKey: 'topic_id',
                 as: 'topic',
             })
-            this.belongsToMany(models.achievement, {
-                foreignKey: 'id',
+            this.belongsTo(models.achievement, {
+                foreignKey: 'achievement_id',
                 as: 'achievement',
             })
-            this.hasOne(models.term, {
-                foreignKey: 'id',
+            this.belongsTo(models.term, {
+                foreignKey: 'term_id',
                 as: 'term',
             })
         }
@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
             term_id: DataTypes.INTEGER,
             topic_id: DataTypes.INTEGER,
             achievement_id: DataTypes.INTEGER,
+            lecture_id: DataTypes.INTEGER,
         },
         {
             sequelize,

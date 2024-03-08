@@ -39,24 +39,6 @@ module.exports = {
             },
         }),
             await queryInterface.addConstraint('lecturers', {
-                fields: ['groupLecturer_id'],
-                type: 'foreign key',
-                name: 'lecturer_groupLecturers_association',
-                references: {
-                    table: 'groupLecturers',
-                    field: 'id',
-                },
-            }),
-            await queryInterface.addConstraint('lecturers', {
-                fields: ['typeRoleLecturer_id'],
-                type: 'foreign key',
-                name: 'lecturer_typeRoleLecturer_association',
-                references: {
-                    table: 'typeRoleLecturers',
-                    field: 'id',
-                },
-            }),
-            await queryInterface.addConstraint('lecturers', {
                 fields: ['user_id'],
                 type: 'foreign key',
                 name: 'lecturer_user_association',
@@ -146,6 +128,35 @@ module.exports = {
                     field: 'id',
                 },
             })
+        await queryInterface.addConstraint('topicOfTerms', {
+            fields: ['lecturer_id'],
+            type: 'foreign key',
+            name: 'topicOfTerms_lecturer_association',
+            references: {
+                table: 'lecturers',
+                field: 'id',
+            },
+        })
+
+        await queryInterface.addConstraint('featureLists', {
+            fields: ['role_id'],
+            type: 'foreign key',
+            name: 'featureList_role_association',
+            references: {
+                table: 'roles',
+                field: 'id',
+            },
+        })
+
+        await queryInterface.addConstraint('users', {
+            fields: ['role_id'],
+            type: 'foreign key',
+            name: 'user_role_association',
+            references: {
+                table: 'roles',
+                field: 'id',
+            },
+        })
     },
     async down(queryInterface, Sequelize) {
         await queryInterface.removeConstraint('groupStudents', {

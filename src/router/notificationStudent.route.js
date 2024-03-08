@@ -18,3 +18,5 @@ router.post(APP_ROUTER.INDEX, createNotificationStudent)
 router.put(APP_ROUTER.NOTIFICATION_STUDENT_BY_ID, updateNotificationStudent)
 
 router.delete(APP_ROUTER.NOTIFICATION_STUDENT_BY_ID, deleteNotificationStudent)
+
+module.exports = router

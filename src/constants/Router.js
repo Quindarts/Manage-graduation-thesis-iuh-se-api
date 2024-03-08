@@ -53,7 +53,7 @@ const APP_ROUTER = {
     GROUP_LECTURER_BY_ID: '/:id',
     GROUP_LECTURER_MEMBERS: '/:id/members/:lecturer_id',
 
-    //GROUP
+    //GROUP_STUDENT
     GROUP_STUDENT: '/group_students',
     GROUP_STUDENT_BY_ID: '/:id',
     GROUP_TYPE_REPORT: '/:id/type_report',
@@ -64,6 +64,10 @@ const APP_ROUTER = {
 
     //test route
     GROUP_NOTIFICATION: '/:id/notfication',
+
+    //NOTIFICATION_STUDENT
+    NOTIFICATION_STUDENT: '/notification-students',
+    NOTIFICATION_STUDENT_BY_ID: '/:id',
 
     //EVALUATIONS
     EVALUATION: '/evaluations',
@@ -80,4 +84,5 @@ const APP_ROUTER = {
     ACHIEVEMENT: '/achievements',
     ACHIEVEMENT_BY_ID: '/:id',
 }
+
 module.exports = { APP_ROUTER }

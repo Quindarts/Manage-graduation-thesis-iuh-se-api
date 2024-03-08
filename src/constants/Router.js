@@ -39,8 +39,8 @@ const APP_ROUTER = {
 
     //TRANSCRIPTS
     TRANSCRIPT: '/transcripts',
-    TRANSCRIPT_BY_GROUP: '/by-groups',
-    TRANSCRIPT_BY_STUDENTS: '/by-students/:student_id',
+    TRANSCRIPT_BY_ID: '/:id',
+    TRANSCRIPT_BY_GROUP_STUDENT: '/group-student/:group_student_id',
     TRANSCRIPT_BY_SUMMARY: '/summary',
 
     //TOPICS

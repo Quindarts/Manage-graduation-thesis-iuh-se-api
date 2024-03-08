@@ -33,7 +33,7 @@ const APP_ROUTER = {
 
     //TERMS
     TERM: '/terms',
-    TERM: '/:id',
+    TERM_BY_ID: '/:id',
     TERM_PUBLIC_RESULT: '/:id/public-result',
     TERM_NOW: '/now',
 

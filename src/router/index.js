@@ -7,6 +7,7 @@ const student = require('./student.route')
 const groupStudent = require('./groupStudent.route')
 const notificationStudent = require('./notificationStudent.route')
 const achievement = require('./achievement.route')
+const term = require('./term.route')
 
 function router(app) {
     app.use(APP_ROUTER.USER, user)
@@ -17,6 +18,7 @@ function router(app) {
     app.use(APP_ROUTER.GROUP_STUDENT, groupStudent)
     app.use(APP_ROUTER.NOTIFICATION_STUDENT, notificationStudent)
     app.use(APP_ROUTER.ACHIEVEMENT, achievement)
+    app.use(APP_ROUTER.TERM, term)
 }
 
 module.exports = router

@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken')
 
 function generateToken(type = 'access', payload, tokenLife) {
+    console.log('🚀 ~ generateToken ~ payload:', payload)
     const key = type
         ? process.env.TOKEN_SECRET_KEY
         : process.env.REFRESH_TOKEN_SECRET_KEY

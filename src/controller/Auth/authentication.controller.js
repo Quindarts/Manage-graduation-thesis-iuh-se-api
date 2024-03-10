@@ -7,6 +7,7 @@ const crypto = require('../../helper/crypto/cryptos')
 //[POST LOGIN ]
 const login = async (req, res) => {
     const { userName, password, remmber } = req.body
+    console.log('🚀 ~ login ~ userName:', userName)
     var refreshToken = ''
     try {
         //Checked Username
@@ -32,7 +33,11 @@ const login = async (req, res) => {
             if (refreshToken === '') {
                 refreshToken = jwtHelper.generateToken(
                     'refresh',
-                    { id: user.id, dateCreated: Date.now },
+                    {
+                        user_id: user.id,
+                        role_id: user.role_id,
+                        dateCreated: Date.now,
+                    },
                     '30000h'
                 )
             } else {
@@ -44,7 +49,7 @@ const login = async (req, res) => {
 
             const accessToken = jwtHelper.generateToken(
                 'access',
-                { id: user.id },
+                { user_id: user.id, role_id: user.role_id },
                 remmber ? '24h' : '1h'
             )
 
@@ -72,7 +77,7 @@ const login = async (req, res) => {
         }
     } catch (error) {
         console.log(error)
-        Error.sendError(error)
+        Error.sendError(res, error)
     }
 }
 
